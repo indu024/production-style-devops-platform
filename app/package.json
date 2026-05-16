@@ -1,0 +1,6 @@
+{
+  "name": "devops-project",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
