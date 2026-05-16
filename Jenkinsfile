@@ -9,15 +9,9 @@ pipeline {
             }
         }
 
-        stage('Load Image To Kind') {
+        stage('Verify Docker Image') {
             steps {
-                sh 'kind load docker-image devops-app --name devops-cluster'
-            }
-        }
-
-        stage('Deploy To Kubernetes') {
-            steps {
-                sh 'kubectl apply -f kubernetes/'
+                sh 'docker images'
             }
         }
 
