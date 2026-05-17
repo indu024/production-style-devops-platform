@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DevOps Project</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 40px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #3b82f6;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Production Style DevOps Platform</h1>
+
+        <p>Frontend + Backend + Docker + Kubernetes + Jenkins</p>
+
+        <button onclick="loadMessage()">
+            Check Backend API
+        </button>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        async function loadMessage() {
+
+            const response = await fetch('/api/message');
+
+            const data = await response.json();
+
+            document.getElementById('message').innerHTML =
+                data.message;
+        }
+    </script>
+
+</body>
+
+</html>
